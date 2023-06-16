@@ -45,6 +45,7 @@ jobs:
         with:
           repository: 'im-sandbox-mikaelt/hello-USCIS-composite-action'
           path: ./.github/actions/hello-USCIS-composite-action
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Use Composite Action
         uses: ./.github/actions/hello-USCIS-composite-action
