@@ -39,3 +39,14 @@ jobs:
       - name: Run only if PR
         if: ${{ github.event_name == 'pull-request' }}
         run: echo Hello, from the PR!
+
+      
+      - uses: actions/checkout@v3
+        with:
+          repository: 'im-sandbox-mikaelt/hello-USCIS-composite-action'
+          path: ./.github/actions/hello-USCIS-composite-action
+
+      - name: Use Composite Action
+        uses: ./.github/actions/hello-USCIS-composite-action
+        with:
+            who-to-greet: 'USCIS'
